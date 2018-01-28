@@ -1,0 +1,11 @@
+<h1>Lista przedmiotów</h1>
+<table> <tr>
+    <th>Przedmiot</th>
+    <th>Opis</th>
+  </tr>
+<% @craft.each do |craft| %> <tr>
+<td><%= craft.przedmiot %></td>
+<td><%= craft.opis %></td>
+<td><%= link_to 'Pokaż', craft_path(craft) %></td>
+</tr>
+<% end %> </table>

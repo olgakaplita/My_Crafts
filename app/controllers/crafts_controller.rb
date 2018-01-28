@@ -1,5 +1,7 @@
 class CraftsController < ApplicationController
+
   def index
+    @craft = Craft.all
   end
 
   def new
@@ -16,4 +18,5 @@ class CraftsController < ApplicationController
   def show
     @craft = Craft.find(params[:id])
   end
+
 end
