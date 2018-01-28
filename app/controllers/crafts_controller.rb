@@ -3,6 +3,7 @@ class CraftsController < ApplicationController
   end
 
   def new
+    @craft = Craft.new
   end
 
   def create
