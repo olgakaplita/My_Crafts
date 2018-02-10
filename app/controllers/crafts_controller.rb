@@ -11,8 +11,11 @@ class CraftsController < ApplicationController
   def create
     @craft = Craft.new(params[:craft].permit(:przedmiot, :opis))
 
-    @craft.save
-    redirect_to @craft
+    if @craft.save
+      redirect_to @craft
+    else
+      render 'new'
+    end
   end
 
   def show
