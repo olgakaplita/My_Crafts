@@ -22,4 +22,18 @@ class CraftsController < ApplicationController
     @craft = Craft.find(params[:id])
   end
 
+  def edit
+    @craft = Craft.find(params[:id])
+  end
+
+
+    def update
+      if @craft.update(permitted_attributes(@craft))
+        redirect_to craft_path(@craft)
+      else
+        render 'edit'
+      end
+    end
+
+
 end
