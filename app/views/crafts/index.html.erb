@@ -1,3 +1,5 @@
+<td><%= link_to 'New craft', new_craft_path %><td>
+
 <h1>Lista przedmiotów</h1>
 <table> <tr>
     <th>Przedmiot</th>
@@ -7,5 +9,6 @@
 <td><%= craft.przedmiot %></td>
 <td><%= craft.opis %></td>
 <td><%= link_to 'Pokaż', craft_path(craft) %></td>
+
 </tr>
 <% end %> </table>
