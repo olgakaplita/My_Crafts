@@ -10,5 +10,9 @@
 <td><%= craft.opis %></td>
 <td><%= link_to 'Pokaż', craft_path(craft) %></td>
 <td><%= link_to 'Edytuj', edit_craft_path(craft) %></td>
+<td><%= link_to 'Usuń', craft_path(craft),
+    method: :delete,
+    data: { confirm: 'Jesteś pewny?'} %></td>
+
 </tr>
 <% end %> </table>

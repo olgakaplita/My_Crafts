@@ -4,6 +4,10 @@ class CraftsController < ApplicationController
     @craft = Craft.all
   end
 
+  def show
+    @craft = Craft.find(params[:id])
+  end
+
   def new
     @craft = Craft.new
   end
@@ -18,14 +22,9 @@ class CraftsController < ApplicationController
     end
   end
 
-  def show
-    @craft = Craft.find(params[:id])
-  end
-
   def edit
     @craft = Craft.find(params[:id])
   end
-
 
   def update
     if @craft.update(permitted_params)
@@ -34,6 +33,12 @@ class CraftsController < ApplicationController
       render 'edit'
     end
   end
+
+   def destroy
+     @craft = Craft.find(params[:id])
+     @craft.destroy
+     redirect_to crafts_path
+   end
 
   def permitted_params
     params.require(:craft).permit(:przedmiot, :opis)
