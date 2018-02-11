@@ -1,33 +1,6 @@
  <h1>Edit article</h1>
 
-<%= form_for(@craft) do |f| %>
-
-  <% if @craft.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@craft.errors.count, "error") %> prohibited this craft from being saved:
-      </h2>
-      <ul>
-        <% @craft.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-      </ul>
-    </div>
-<% end %>
-
-<p>
-<%= f.label :przedmiot %><br>
-<%= f.text_field :przedmiot %>
-</p>
-<p>
-<%= f.label :opis %><br>
-<%= f.text_area :opis %>
-</p>
-<p>
-<%= f.submit %>
-
-</p>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Wróć', crafts_path %>
 <%= link_to 'Edytuj', edit_craft_path(@craft) %>
