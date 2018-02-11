@@ -27,13 +27,17 @@ class CraftsController < ApplicationController
   end
 
 
-    def update
-      if @craft.update(permitted_attributes(@craft))
-        redirect_to craft_path(@craft)
-      else
-        render 'edit'
-      end
+  def update
+    if @craft.update(permitted_params)
+      redirect_to craft_path(@craft)
+    else
+      render 'edit'
     end
+  end
+
+  def permitted_params
+    params.require(:craft).permit(:przedmiot, :opis)
+  end
 
 
 end
